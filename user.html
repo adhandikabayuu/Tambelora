@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kecamatan Tambelan — Pariwisata & Budaya Kepulauan Riau</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<!-- GOV BAR -->
+<div class="gov-bar">
+  <div class="gov-bar-inner">
+    <span>📌 Kecamatan Tambelan — Kabupaten Bintan, Kepulauan Riau</span>
+    <div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="header-logo" href="#" onclick="showPage('beranda');return false;">
+
+  <div class="logo-emblem">
+    <img src="images/Logo3.jpeg" alt="Logo Tambelan">
+  </div>
+
+  <div class="logo-text">
+    <div class="site-name">Kecamatan Tambelan</div>
+    <div class="site-sub">Pariwisata & Budaya — Kecamatan Tambelan</div>
+  </div>
+
+</a>
+    <nav class="header-nav">
+      <button class="nav-link active" id="nav-beranda" onclick="showPage('beranda')">Beranda</button>
+      <button class="nav-link" id="nav-wisata" onclick="showPage('wisata')">Destinasi Wisata</button>
+      <button class="nav-link" id="nav-budaya" onclick="showPage('budaya')">Budaya & Event</button>
+      <button class="nav-link" id="nav-galeri" onclick="showPage('galeri')">Galeri</button>
+      <button class="nav-link" id="nav-kuliner" onclick="showPage('kuliner')">Kuliner</button>
+      <button class="nav-link" id="nav-penginapan" onclick="showPage('penginapan')">Penginapan</button>
+      <button class="nav-link" id="nav-ulasan" onclick="showPage('ulasan')">Ulasan</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ BERANDA ═══ -->
+<div id="page-beranda" class="page active">
+<div class="main-pattern-area">
+</div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+  <source src="images/Vid_TBL.mp4" type="video/mp4">
+</video>
+    <div class="hero-content">
+      <div class="hero-breadcrumb">Tambelan — Kepulauan Riau</div>
+      <h1>Jelajahi Keindahan<br><em>Tambelan</em></h1>
+      <p>Portal resmi pariwisata Kecamatan Tambelan. Temukan destinasi wisata alam, kekayaan budaya Melayu, kuliner khas, dan pesona bawah laut yang menakjubkan.</p>
+      <div class="hero-btns">
+        <button class="btn-hero-primary" onclick="showPage('wisata')">
+          <i class="fa fa-compass"></i> Jelajahi Destinasi
+        </button>
+        <button class="btn-hero-ghost" onclick="showPage('galeri')">
+          <i class="fa fa-images"></i> Lihat Galeri
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stats-strip-inner">
+      <div class="stat-item">
+        <div class="stat-icon-box"><i class="fa fa-umbrella-beach"></i></div>
+        <div><div class="stat-num" id="s-wisata">0</div><div class="stat-label">Destinasi Wisata</div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-box"><i class="fa fa-masks-theater"></i></div>
+        <div><div class="stat-num" id="s-budaya">0</div><div class="stat-label">Event Budaya</div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-box"><i class="fa fa-star"></i></div>
+        <div><div class="stat-num" id="s-ulasan">0</div><div class="stat-label">Ulasan Wisatawan</div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon-box"><i class="fa fa-utensils"></i></div>
+        <div><div class="stat-num" id="s-kuliner">0</div><div class="stat-label">Kuliner & Penginapan</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESTINASI UNGGULAN -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-hdr">
+        <div>
+          <div class="section-eyebrow">Explore</div>
+          <div class="section-title">Destinasi Unggulan</div>
+          <div class="section-desc">Nikmati keindahan alam bahari Tambelan yang masih alami dan terjaga.</div>
+        </div>
+        <button class="btn btn-ghost" onclick="showPage('wisata')">Lihat Semua <i class="fa fa-arrow-right"></i></button>
+      </div>
+      <div class="dest-grid" id="beranda-wisata-cards"></div>
+    </div>
+  </section>
+
+  <!-- BUDAYA -->
+  <section class="section">
+    <div class="container">
+      <div class="section-hdr">
+        <div>
+          <div class="section-eyebrow">Kearifan Lokal</div>
+          <div class="section-title">Budaya & Event Terkini</div>
+          <div class="section-desc">Kekayaan tradisi dan seni budaya masyarakat Melayu Tambelan.</div>
+        </div>
+        <button class="btn btn-ghost" onclick="showPage('budaya')">Lihat Semua <i class="fa fa-arrow-right"></i></button>
+      </div>
+      <div class="dest-grid" id="beranda-budaya-cards"></div>
+    </div>
+  </section>
+
+  <!-- GALERI PREVIEW -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-hdr">
+        <div>
+          <div class="section-eyebrow">Galeri Foto</div>
+          <div class="section-title">Tambelan dalam Gambar</div>
+        </div>
+        <button class="btn btn-ghost" onclick="showPage('galeri')">Lihat Semua <i class="fa fa-arrow-right"></i></button>
+      </div>
+      <div class="gallery-masonry" id="beranda-galeri"></div>
+    </div>
+  </section>
+
+  <!-- PETA LOKASI -->
+<section class="map-section">
+  <div class="container">
+    <div class="section-hdr">
+      <div>
+        <div class="section-eyebrow">Lokasi</div>
+        <div class="section-title">Peta Kecamatan Tambelan</div>
+        <div class="section-desc">
+          Lokasi Kecamatan Tambelan, Kabupaten Bintan, Kepulauan Riau.
+        </div>
+      </div>
+    </div>
+
+    <div class="map-box">
+      <iframe
+        src="https://www.google.com/maps?q=Tambelan,Bintan,Kepulauan%20Riau&output=embed"
+        width="100%"
+        height="500"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- PROFIL -->
+      <div class="footer-brand">
+
+        <div class="footer-logo-area">
+          <img src="images/Logo3.jpeg" alt="Logo Kecamatan" class="footer-logo-img">
+
+          <div>
+            <h3>Kec. Tambelan</h3>
+            <p>
+              Portal resmi pariwisata dan budaya Kecamatan Tambelan,
+              Kabupaten Bintan, Kepulauan Riau. 
+            </p>
+          </div>
+        </div>
+
+       
+      </div>
+
+      <!-- NAVIGASI -->
+      <div class="footer-col">
+        <h5>Navigasi</h5>
+        <ul>
+          <li><a onclick="showPage('wisata')">Destinasi Wisata</a></li>
+          <li><a onclick="showPage('budaya')">Budaya & Event</a></li>
+          <li><a onclick="showPage('galeri')">Galeri Foto</a></li>
+          <li><a onclick="showPage('kuliner')">Kuliner Khas</a></li>
+          <li><a onclick="showPage('penginapan')">Penginapan</a></li>
+        </ul>
+      </div>
+
+      <!-- KONTAK -->
+      <div class="footer-col">
+    <h5>Media Sosial</h5>
+
+    <div class="footer-social-list">
+        <a href="https://instagram.com/wonderful_tambelan"><i class="fab fa-instagram"></i> wonderful_tambelan</a>
+        <a href="https://facebook.com/Gallery Tambelan"><i class="fab fa-facebook-f"></i> Gallery Tambelan</a>
+        <a href="082127769762"><i class="fab fa-whatsapp"></i> +62 812-2776-9762</a>
+        <a href="#"><i class="fab fa-tiktok"></i> wonderful_tambelan</a>
+    </div>
+</div>
+
+      <!-- SPONSOR -->
+      <div class="footer-col">
+        <h5>Didukung Oleh</h5>
+
+        <div class="sponsor-footer">
+          <img src="images/Logo1.png" alt="Bintan">
+          <img src="images/Logo3.jpeg" alt="Tambelan">
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>
+        © 2026 Kecamatan Tambelan, Kabupaten Bintan, Kepulauan Riau.
+        Seluruh Hak Cipta Dilindungi.
+      </span>
+
+      <span>
+        Dikelola oleh Pemerintah Kecamatan Tambelan
+      </span>
+    </div>
+
+  </div>
+</footer>
+</div>
+
+<!-- ═══ WISATA ═══ -->
+<div id="page-wisata" class="page">
+  <div class="page-topbar">
+    <h2><i class="fa fa-umbrella-beach" style="color:var(--blue);margin-right:8px"></i>Destinasi Wisata Tambelan</h2>
+    <div style="margin-left:auto;display:flex;gap:8px">
+    </div>
+  </div>
+  <div class="page-inner">
+    <div class="">
+      <p>
+    </div>
+    <div class="chip-filter" id="chip-wisata">
+      <div class="chip active" onclick="filterCards('wisata','Semua',this)">Semua</div>
+      <div class="chip" onclick="filterCards('wisata','Pantai',this)"><i class="fa fa-umbrella-beach"></i> Pantai</div>
+      <div class="chip" onclick="filterCards('wisata','Pulau',this)"> Pulau</div>
+      <div class="chip" onclick="filterCards('wisata','Hutan',this)"> Hutan</div>
+      <div class="chip" onclick="filterCards('wisata','Bahari',this)"> Bahari</div>
+    </div>
+    <div class="dest-grid" id="wisata-cards"></div>
+  </div>
+</div>
+
+<!-- ═══ BUDAYA ═══ -->
+<div id="page-budaya" class="page">
+  <div class="page-topbar">
+    <h2><i class="fa fa-masks-theater" style="color:var(--gold);margin-right:8px"></i>Budaya & Event Tambelan</h2>
+    <div style="margin-left:auto">
+    </div>
+  </div>
+  <div class="page-inner">
+    <div class="">
+      <div class="info-icon"></div>
+      <p></p>
+    </div>
+    <div class="chip-filter" id="chip-budaya">
+      <div class="chip active" onclick="filterCards('budaya','Semua',this)">Semua</div>
+      <div class="chip" onclick="filterCards('budaya','Festival',this)"> Festival</div>
+      <div class="chip" onclick="filterCards('budaya','Tradisi',this)"> Tradisi</div>
+      <div class="chip" onclick="filterCards('budaya','Seni',this)"> Seni</div>
+    </div>
+    <div class="dest-grid" id="budaya-cards"></div>
+  </div>
+</div>
+
+<!-- ═══ GALERI ═══ -->
+<div id="page-galeri" class="page">
+  <div class="page-topbar">
+    <h2><i class="fa fa-images" style="color:var(--blue);margin-right:8px"></i>Galeri Foto Tambelan</h2>
+    <div style="margin-left:auto">
+    </div>
+  </div>
+  <div class="page-inner">
+    <div class="gallery-masonry" id="galeri-grid"></div>
+  </div>
+</div>
+
+<!-- ═══ KULINER ═══ -->
+<div id="page-kuliner" class="page">
+  <div class="page-topbar">
+    <h2><i class="fa fa-utensils" style="color:var(--gold);margin-right:8px"></i>Kuliner Khas Tambelan</h2>
+    <div style="margin-left:auto">
+    </div>
+  </div>
+  <div class="page-inner">
+    <div class="">
+      <div class="info-icon"></div>
+      <p></p>
+    </div>
+    <div class="dest-grid" id="kuliner-list"></div>
+  </div>
+</div>
+
+<!-- ═══ PENGINAPAN ═══ -->
+<div id="page-penginapan" class="page">
+  <div class="page-topbar">
+    <h2><i class="fa fa-bed" style="color:var(--blue);margin-right:8px"></i>Penginapan di Tambelan</h2>
+    <div style="margin-left:auto">
+    </div>
+  </div>
+  <div class="page-inner">
+    <div class="dest-grid" id="penginapan-list"></div>
+  </div>
+</div>
+
+<!-- ═══ ULASAN ═══ -->
+<div id="page-ulasan" class="page">
+  <div class="page-topbar">
+    <h2><i class="fa fa-star" style="color:var(--gold);margin-right:8px"></i>Ulasan Wisatawan</h2>
+    <div style="margin-left:auto">
+      <button class="btn btn-gold" onclick="openModal('ulasan')"><i class="fa fa-pen"></i> Tulis Ulasan</button>
+    </div>
+  </div>
+  <div class="page-inner">
+    <div class="reviews-layout">
+      <div id="ulasan-list"></div>
+      <div>
+        <div class="rating-widget">
+          <h4>📊 Distribusi Rating</h4>
+          <div id="rating-dist"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ DASHBOARD ═══ -->
+<div id="page-dashboard" class="page">
+  <div class="page-topbar">
+    <h2><i class="fa fa-chart-bar" style="color:var(--navy);margin-right:8px"></i>Dashboard Admin</h2>
+  </div>
+  <div class="page-inner">
+    <div class="dash-stats">
+      <div class="dash-stat"><div class="dash-icon blue"><i class="fa fa-umbrella-beach"></i></div><div><div class="dash-num" id="d-wisata">0</div><div class="dash-lbl">Total Wisata</div></div></div>
+      <div class="dash-stat"><div class="dash-icon gold"><i class="fa fa-masks-theater"></i></div><div><div class="dash-num" id="d-budaya">0</div><div class="dash-lbl">Event Budaya</div></div></div>
+      <div class="dash-stat"><div class="dash-icon red"><i class="fa fa-star"></i></div><div><div class="dash-num" id="d-ulasan">0</div><div class="dash-lbl">Total Ulasan</div></div></div>
+      <div class="dash-stat"><div class="dash-icon green"><i class="fa fa-database"></i></div><div><div class="dash-num" id="d-total">0</div><div class="dash-lbl">Total Data</div></div></div>
+    </div>
+    <div class="dash-charts">
+      <div class="chart-box">
+        <h4>📈 Pengunjung per Bulan</h4>
+        <div class="bar-chart" id="bar-chart"></div>
+      </div>
+      <div class="chart-box">
+        <h4>🏷️ Kategori Wisata</h4>
+        <div id="kategori-chart" style="margin-top:8px"></div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <h3 style="font-family:'Lora',serif;font-size:18px;color:var(--navy)">📋 Semua Data</h3>
+    </div>
+    <div class="table-wrap">
+      <div class="table-toolbar">
+        <div class="search-box">
+          <i class="fa fa-search" style="color:var(--text-lt)"></i>
+          <input type="text" id="search-input" placeholder="Cari data..." oninput="searchTable()">
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Nama</th><th>Kategori</th><th>Modul</th><th>Status</th><th>Aksi</th></tr>
+        </thead>
+        <tbody id="dashboard-table"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL FORM -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal-box">
+    <div class="modal-header">
+      <div class="modal-icon" id="modal-icon">✏️</div>
+      <h3 id="modal-title">Form</h3>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal()">Batal</button>
+      <button class="btn btn-primary" onclick="saveModal()"><i class="fa fa-save"></i> Simpan</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM -->
+<div class="confirm-overlay" id="confirm-overlay">
+  <div class="confirm-box">
+    <div class="confirm-icon">🗑️</div>
+    <h4>Hapus Data?</h4>
+    <p id="confirm-text">Data ini akan dihapus permanen.</p>
+    <div class="confirm-btns">
+      <button class="btn btn-ghost" onclick="closeConfirm()">Batal</button>
+      <button class="btn btn-danger" onclick="executeDelete()">Hapus</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
